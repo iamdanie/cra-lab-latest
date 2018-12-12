@@ -3,23 +3,85 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.6.2",
+    "@material-ui/icons": "^3.0.1",
+    "@types/classnames": "^2.2.6",
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.10",
+    "@types/react": "^16.7.7",
+    "@types/react-dom": "^16.0.10",
+    "@types/react-redux": "^6.0.10",
+    "@types/react-router-dom": "^4.3.1",
+    "ag-grid": "^18.1.2",
+    "ag-grid-react": "^18.0.0",
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "formik": "^1.0.3",
     "react": "^16.6.3",
+    "react-app-rewire-styled-components": "^3.0.2",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-redux": "^5.0.6",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "next",
+    "react-scripts": "2.1.1",
+    "redux": "^4.0.0",
+    "redux-mock-store": "^1.5.1",
+    "redux-saga": "^0.16.0",
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^3.4.1",
+    "yup": "^0.26.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "lint:check": "prettier --list-different \"./**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "tslint": "tslint -c tslint.json 'src/**/*.ts*'"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ],
+    "*.{ts,tsx}": [
+      "tslint"
+    ],
+    "./**/*.{js,jsx,ts,tsx,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@craco/craco": "^3.2.3",
+    "@types/jest": "*",
+    "@types/node": "*",
+    "babel-core": "^6.26.3",
+    "craco-plugin-react-hot-reload": "^0.0.3",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3",
+    "react-hot-loader": "^4.3.12",
+    "redux-devtools": "^3.3.2",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.2.0",
+    "redux-logger": "^3.0.6",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.2"
+  }
 }

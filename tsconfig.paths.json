@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@global-types": ["src/types.js"],
+      "@app/*": ["src/app/*"],
+      "@contacts/*": ["src/contacts/*"],
+      "@parameters/*": ["src/parameters/*"]
+    }
+  }
+}
