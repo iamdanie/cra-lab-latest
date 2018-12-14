@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import styles from './styles';
+import AddIcon from '@material-ui/icons/Add';
 
 type Props = {
   classes: any;
@@ -17,7 +18,7 @@ type Props = {
 const TopBar = ({ classes, title }: Props) => {
   return (
     <AppBar position="static">
-      <Toolbar>
+      <Toolbar className={classes.toolBar}>
         <MenuIcon />
         <Typography variant="h6" color="inherit" className={classes.title}>
           {title}

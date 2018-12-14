@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -11,12 +11,14 @@ import createStyles from '@material-ui/core/styles/createStyles';
 import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles';
 import withTheme, { styles } from './withTheme';
 import TopBar from '@app/components/topBar/topBar';
+import Contacts from '@contacts/components/contacts';
 
+import { Provider } from 'react-redux';
 type State = {
   open: boolean;
 };
 
-class Index extends React.Component<WithStyles<typeof styles>, State> {
+class Index extends Component<WithStyles<typeof styles>, State> {
   state = {
     open: false
   };
@@ -25,6 +27,7 @@ class Index extends React.Component<WithStyles<typeof styles>, State> {
     return (
       <div className={this.props.classes.root}>
         <TopBar title={'Contact List'} />
+        <Contacts />
       </div>
     );
   }
